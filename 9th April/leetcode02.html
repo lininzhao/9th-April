@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var lengthOfLastWord = function(s) {
+        var arr=s.trim().split(' ');
+        var lastWord=arr[arr.length-1];
+        var length=lastWord.length;
+        return length; 
+    };
+    console.log(lengthOfLastWord("luffy is still joyboy"));
+    </script>
+</body>
+</html>

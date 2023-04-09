@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //找到最长的公共字符串，如果没有返回空字符串
+        // var strs = ["flower","flow","flight"];
+        
+        //Output: "fl"
+        // var longestCommonPrefix = function(strs) {
+        //     //遍历数组
+        //     for(let i=0;i<strs.length;i++){
+        //         //二维数组
+                
+        //     }
+        // };
+        //     var newArr=[];
+        // for(let i=0;i<strs.length;i++){
+        //        //二维数组
+        //         console.log(typeof strs[i],strs[i]);//字符串类型
+        //         //将字符串再拆分成单个字母放入数组
+        //         newArr.push(strs[i].split(''));//放入新的数组    
+        //     }
+        //     console.log(newArr);//二维数组 
+            //判断公共首字母
+
+            // var newstr=[['f','l','o','w','e','r'],['f','l','o','w'],['f','l','i','g','h','t']];
+
+        //     var str='';
+        //    for(let j=0;j<newArr.length;j++){
+        //         for(let a=0;a<strs[j].length;a++){
+        //             if(newArr[j][a]==newArr[j+1][a] && newArr[j][a]==newArr[j+2][a]){
+        //                 str+=newArr[j][a];
+        //                 continue;
+
+        //             }else{
+        //                 console.log (str);
+        //             }
+        //         }
+        //    }
+        //    console.log(str);
+
+        var longestCommonPrefix = function(strs) {
+            if(strs.length==0){
+                return '';
+            }
+            var newArr=[];
+            for(let i=0;i<strs.length;i++){
+                newArr.push(strs[i].split(''));
+            }
+            var prefix='';
+            for(let i=0;i<strs[0].length;i++){
+                var char=newArr[0][i];
+                for(let j=1;j<newArr.length;j++){
+                    if(char!=newArr[j][i]){
+                        return prefix;
+                    }
+                }
+                prefix+=char;
+            }
+            return prefix;
+        }
+        console.log(longestCommonPrefix(["dog","racecar","car"]));
+    </script>
+
+</body>
+</html>
